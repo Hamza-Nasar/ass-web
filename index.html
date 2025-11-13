@@ -1,184 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HTML Tutorial & Practice | Hamza Web Academy</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-  <style>
-    /* Base Styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      scroll-behavior: smooth;
-      line-height: 1.6;
-    }
-
-    /* Navbar */
-    header.navbar {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 40px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      flex-wrap: wrap;
-      transition: 0.4s;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    header.navbar h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
-    header.navbar h1 span { color: #00e6e6; }
-    header.navbar .author { font-size: 1rem; color: #00e6e6; font-weight: 500; margin-left: 20px; opacity: 0.9; }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 5px;
-      gap: 15px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: 0.3s;
-    }
-    nav a:hover { color: #00e6e6; }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #00e6e6;
-      border-radius: 3px;
-      transition: all 0.3s;
-    }
-    nav.active { display: flex; flex-direction: column; margin-top: 15px; }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 160px 20px 120px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    .hero .h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; text-align: center; }
-    .hero span { color: #00e6e6; }
-    .hero p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; opacity: 0.9; }
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #00e6e6, #00b3b3);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      margin-top: 25px;
-      font-size: 1.05rem;
-      box-shadow: 0 6px 20px rgba(0,230,230,0.3);
-    }
-    .btn:hover {
-      background: linear-gradient(90deg, #00b3b3, #007a7a);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,230,230,0.5);
-    }
-
-    /* Sections */
-    section {
-      padding: 100px 40px;
-      max-width: 900px;
-      margin: auto;
-      animation: slideIn 1s ease-in-out;
-    }
-    section h2 { text-align: center; font-size: 2rem; color: #00e6e6; margin-bottom: 25px; }
-    section .by { text-align: center; font-size: 1rem; color: #00e6e6; margin-top: -10px; margin-bottom: 30px; opacity: 0.85; }
-
-    /* Examples */
-    .example-box, .example {
-      background: rgba(255,255,255,0.08);
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .example-box:hover, .example:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0,230,230,0.3); }
-    .code {
-      background: rgba(0,0,0,0.7);
-      padding: 12px;
-      border-radius: 10px;
-      font-family: 'Courier New', monospace;
-      color: #00e6e6;
-      margin-bottom: 12px;
-      overflow-x: auto;
-      font-size: 0.95rem;
-    }
-    .result {
-      background: rgba(255,255,255,0.1);
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 1.05rem;
-    }
-
-    /* Forms */
-    form input, form button {
-      width: 100%; padding: 12px; margin: 10px 0;
-      border-radius: 8px; border: none;
-      background: rgba(255,255,255,0.15);
-      color: #fff; font-size: 1rem;
-      transition: 0.3s;
-    }
-    form input:focus { background: rgba(0,230,230,0.15); outline: none; }
-    form button { background: #00e6e6; color: #000; font-weight: 600; cursor: pointer; }
-    form button:hover { background: #00ffff; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: rgba(255,255,255,0.08);
-      margin-top: 60px;
-      font-size: 0.95rem;
-    }
-    footer span { color: #00e6e6; font-weight: 600; }
-
-    /* Animations */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      header.navbar { flex-direction: row; align-items: center; padding: 15px 20px; }
-      nav { display: none; width: 100%; flex-direction: column; margin-top: 15px; gap: 10px; }
-      .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-      section { padding: 60px 15px; }
-      section h2 { font-size: 1.7rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <!-- Navbar -->
   <header class="navbar">
     <h1><span>HTML</span> Tutorial</h1>
     <p class="author">By Hamza Nasar</p>
-
     <!-- Hamburger Icon -->
     <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
       <div></div>
     </div>
-
     <nav id="nav-links">
       <a href="#home">Home</a>
       <a href="#basics">Basics</a>
@@ -188,17 +29,16 @@
       <a href="#docs">MDN Docs</a>
     </nav>
   </header>
-
   <!-- Hero -->
   <section class="hero" id="home">
     <h2 class="h2">Learn <span>HTML</span> with Hamza Nasar</h2>
-    <p>Master HTML from <strong>beginner</strong> to <em>pro</em> with interactive examples, live previews, and hands-on practice.</p>
+    <p>Master HTML from <strong>beginner</strong> to <em>pro</em> with interactive examples, live previews, and hands-on
+      practice.</p>
     <a href="#basics" class="btn">Start Learning →</a>
   </section>
-
   <!-- Basics -->
   <section id="basics">
-    <h2>HTML Basics</h2>
+    <h2 class="hello">HTML Basics</h2>
     <p class="by">By Hamza Nasar</p>
     <div class="example-box">
       <h3>Headings</h3>
@@ -213,10 +53,10 @@
     </div>
     <div class="example-box">
       <h3>Paragraph, Span, Bold, Italic</h3>
-      <p>You can use <b>bold</b> text, <i>italic</i> text, or highlight with a <span style="color:#00e6e6;">span</span>.</p>
+      <p>You can use <b>bold</b> text, <i>italic</i> text, or highlight with a <span style="color:#00e6e6;">span</span>.
+      </p>
     </div>
   </section>
-
   <!-- Forms -->
   <section id="forms">
     <h2>HTML Forms</h2>
@@ -232,7 +72,6 @@
       <button type="submit">Submit</button>
     </form>
   </section>
-
   <!-- Input Examples -->
   <section id="inputs">
     <h2>Input Field Examples</h2>
@@ -266,25 +105,27 @@
       <div class="result"><input type="file"></div>
     </div>
   </section>
-
   <!-- Practice -->
   <section id="practice">
     <h2>Practice Examples</h2>
     <p class="by">By Hamza Nasar</p>
     <div class="example">
       <div class="code">&lt;h1&gt;Hello World&lt;/h1&gt;</div>
-      <div class="result"><h1>Hello World</h1></div>
+      <div class="result">
+        <h1>Hello World</h1>
+      </div>
     </div>
     <div class="example">
       <div class="code">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div>
-      <div class="result"><p>This is a paragraph.</p></div>
+      <div class="result">
+        <p>This is a paragraph.</p>
+      </div>
     </div>
     <div class="example">
       <div class="code">&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</div>
       <div class="result"><a href="https://example.com" target="_blank">Visit Example</a></div>
     </div>
   </section>
-
   <!-- MDN Docs -->
   <section id="docs">
     <h2>Mini MDN Reference</h2>
@@ -303,12 +144,8 @@
       </div>
     </div>
   </section>
-
   <!-- Footer -->
-  <footer>
-    © 2025 <span>Hamza Web Academy</span> | Built with ❤️ and HTML
-  </footer>
-
+  <footer> © 2025 <span>Hamza Web Academy</span> | Built with ❤️ and HTML </footer>
   <!-- JS for scroll effect and hamburger toggle -->
   <script>
     // Navbar scroll effect
@@ -330,6 +167,6 @@
       navLinks.classList.toggle('active');
     });
   </script>
-
 </body>
+
 </html>
