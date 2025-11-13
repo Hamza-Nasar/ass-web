@@ -1,36 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loop Flag with Input</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Tutorial & Practice | Hamza Web Academy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <style>
+    /* Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    header.navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: 0.4s;
+    }
+    header.navbar h1 span { color: #00e6e6; }
+    header.navbar a {
+      color: #fff; text-decoration: none; margin-left: 25px; font-weight: 500;
+      transition: 0.3s;
+    }
+    header.navbar a:hover { color: #00e6e6; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 140px 20px 100px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero span { color: #00e6e6; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00e6e6, #00b3b3);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #00b3b3, #007a7a);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,230,230,0.3);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 40px;
+      max-width: 900px;
+      margin: auto;
+      animation: slideIn 1s ease-in-out;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00e6e6;
+      margin-bottom: 25px;
+    }
+    .example-box, .example {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+    .code {
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      color: #00e6e6;
+      margin-bottom: 10px;
+      overflow-x: auto;
+    }
+    .result {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+
+    /* Form */
+    form input, form button {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border-radius: 6px; border: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff; font-size: 1rem;
+    }
+    form button {
+      background: #00e6e6; color: #000; font-weight: 600;
+      cursor: pointer; transition: 0.3s;
+    }
+    form button:hover { background: #00ffff; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.08);
+      margin-top: 60px;
+    }
+    footer span { color: #00e6e6; }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
 </head>
 <body>
-    <h1>Check City</h1>
-    <label for="cityInput">Enter your city:</label>
-    <input type="text" id="cityInput" placeholder="Enter city name">
-    <button onclick="checkCity()">Check</button>
 
-    <script>
-        let cities = ["Karachi", "Lahore", "Islamabad", "Pindi", "Hydrabad", "Peshawar"];
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1><span>HTML</span> Tutorial</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#basics">Basics</a>
+      <a href="#forms">Forms</a>
+      <a href="#practice">Practice</a>
+      <a href="#docs">MDN Docs</a>
+    </nav>
+  </header>
 
-        function checkCity() {
-            let userCity = document.getElementById("cityInput").value.trim();
-            let isMatched = "no";
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Learn <span>HTML</span> by Doing</h2>
+    <p>Master HTML from <strong>beginner</strong> to <em>pro</em> with interactive examples and live practice.</p>
+    <a href="#basics" class="btn">Start Learning →</a>
+  </section>
 
-            for (let i = 0; i < cities.length; i++) {
-                if (userCity.toLowerCase() === cities[i].toLowerCase()) {
-                    isMatched = "yes";
-                    break;
-                }
-            }
+  <!-- Basics -->
+  <section id="basics">
+    <h2>HTML Basics</h2>
+    <div class="example-box">
+      <h3>Headings</h3>
+      <div class="result">
+        <h1>H1 Heading</h1>
+        <h2>H2 Heading</h2>
+        <h3>H3 Heading</h3>
+        <h4>H4 Heading</h4>
+        <h5>H5 Heading</h5>
+        <h6>H6 Heading</h6>
+      </div>
+    </div>
 
-            if (isMatched === "no") {
-                alert("City did not match");
-            } else {
-                alert("City matched");
-            }
-        }
-    </script>
+    <div class="example-box">
+      <h3>Paragraph, Span, Bold, Italic</h3>
+      <p>You can use <b>bold</b> text, <i>italic</i> text, or highlight with <span style="color:#00e6e6;">span</span>.</p>
+    </div>
+  </section>
+
+  <!-- Forms -->
+  <section id="forms">
+    <h2>HTML Forms</h2>
+    <form>
+      <input type="text" placeholder="Enter your name">
+      <input type="email" placeholder="Enter your email">
+      <input type="password" placeholder="Enter your password">
+      <input type="number" placeholder="Enter a number">
+      <input type="date">
+      <input type="time">
+      <input type="file">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Practice -->
+  <section id="practice">
+    <h2>Practice Examples</h2>
+    <div class="example">
+      <div class="code">&lt;h1&gt;Hello World&lt;/h1&gt;</div>
+      <div class="result"><h1>Hello World</h1></div>
+    </div>
+
+    <div class="example">
+      <div class="code">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div>
+      <div class="result"><p>This is a paragraph.</p></div>
+    </div>
+
+    <div class="example">
+      <div class="code">&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</div>
+      <div class="result"><a href="https://example.com" target="_blank">Visit Example</a></div>
+    </div>
+  </section>
+
+  <!-- MDN Docs -->
+  <section id="docs">
+    <h2>Mini MDN Reference</h2>
+    <div class="example">
+      <div class="code">&lt;form&gt; with various inputs</div>
+      <div class="result">
+        <form>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <input type="number" placeholder="Age">
+          <input type="password" placeholder="Password">
+          <input type="file">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 <span>Hamza Web Academy</span> | Built with ❤️ and HTML
+  </footer>
+
+  <!-- Scroll Effect JS -->
+  <script>
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        nav.style.background = "rgba(0,0,0,0.6)";
+        nav.style.boxShadow = "0 2px 10px rgba(0,230,230,0.2)";
+      } else {
+        nav.style.background = "rgba(255,255,255,0.08)";
+        nav.style.boxShadow = "none";
+      }
+    });
+  </script>
 </body>
 </html>
