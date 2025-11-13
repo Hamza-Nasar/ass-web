@@ -6,20 +6,6 @@
   <title>HTML Tutorial & Practice | Hamza Web Academy</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
   <style>
-.hi{
-      font-weight: 400;
-      color: #00e6e6;
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      animation: fadeIn 1.3s ease-in-out;
-    }
-.hii{
-      font-weight: 400;
-      color: #00e6e6;
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      animation: fadeIn 1.3s ease-in-out;
-    }
     /* Base Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -27,6 +13,7 @@
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
     /* Navbar */
@@ -40,39 +27,68 @@
       z-index: 1000;
       transition: 0.4s;
     }
+    header.navbar h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
     header.navbar h1 span { color: #00e6e6; }
-    header.navbar a {
-      color: #fff; text-decoration: none; margin-left: 25px; font-weight: 500;
+
+    header.navbar .author {
+      font-size: 1rem;
+      color: #00e6e6;
+      font-weight: 500;
+      margin-left: 20px;
+      opacity: 0.9;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      font-size: 0.95rem;
       transition: 0.3s;
     }
-    header.navbar a:hover { color: #00e6e6; }
+    nav a:hover { color: #00e6e6; }
 
     /* Hero Section */
     .hero {
       text-align: center;
       padding: 140px 20px 100px;
-      animation: fadeIn 2s ease-in-out;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
     .hero span { color: #00e6e6; }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
     .btn {
       display: inline-block;
       background: linear-gradient(90deg, #00e6e6, #00b3b3);
       color: #fff;
-      padding: 12px 25px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
-      margin-top: 10px;
+      margin-top: 20px;
+      font-size: 1rem;
     }
     .btn:hover {
       background: linear-gradient(90deg, #00b3b3, #007a7a);
       transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(0,230,230,0.3);
+      box-shadow: 0 4px 15px rgba(0,230,230,0.3);
     }
 
-    /* Sections */
+    /* Section General */
     section {
       padding: 80px 40px;
       max-width: 900px;
@@ -83,13 +99,23 @@
       text-align: center;
       font-size: 2rem;
       color: #00e6e6;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
+    section .by {
+      text-align: center;
+      font-size: 1rem;
+      color: #00e6e6;
+      margin-top: -15px;
+      margin-bottom: 25px;
+      opacity: 0.85;
+    }
+
     .example-box, .example {
       background: rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .code {
       background: rgba(0,0,0,0.6);
@@ -99,12 +125,13 @@
       color: #00e6e6;
       margin-bottom: 10px;
       overflow-x: auto;
+      font-size: 0.95rem;
     }
     .result {
       background: rgba(255,255,255,0.1);
       padding: 15px;
       border-radius: 8px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     /* Form */
@@ -123,11 +150,12 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       background: rgba(255,255,255,0.08);
       margin-top: 60px;
+      font-size: 0.95rem;
     }
-    footer span { color: #00e6e6; }
+    footer span { color: #00e6e6; font-weight: 600; }
 
     /* Animations */
     @keyframes fadeIn {
@@ -145,7 +173,7 @@
   <!-- Navbar -->
   <header class="navbar">
     <h1><span>HTML</span> Tutorial</h1>
-    <h2 class="hii">By Hamza Nasar</h2>
+    <p class="author">By Hamza Nasar</p>
     <nav>
       <a href="#home">Home</a>
       <a href="#basics">Basics</a>
@@ -157,15 +185,16 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <h2>Learn <span>HTML</span> by Hamza Nasar</h2>
-    <p>Master HTML from <strong>beginner</strong> to <em>pro</em> with interactive examples and live practice.</p>
+    <h2>Learn <span>HTML</span> with Hamza Nasar</h2>
+    <p>Master HTML from <strong>beginner</strong> to <em>pro</em> with interactive examples, live previews, and hands-on practice.</p>
     <a href="#basics" class="btn">Start Learning →</a>
   </section>
 
   <!-- Basics -->
   <section id="basics">
     <h2>HTML Basics</h2>
-<h2 class="hi">By Hamza Nasar</h2>
+    <p class="by">By Hamza Nasar</p>
+
     <div class="example-box">
       <h3>Headings</h3>
       <div class="result">
@@ -180,13 +209,14 @@
 
     <div class="example-box">
       <h3>Paragraph, Span, Bold, Italic</h3>
-      <p>You can use <b>bold</b> text, <i>italic</i> text, or highlight with <span style="color:#00e6e6;">span</span>.</p>
+      <p>You can use <b>bold</b> text, <i>italic</i> text, or highlight with a <span style="color:#00e6e6;">span</span>.</p>
     </div>
   </section>
 
   <!-- Forms -->
   <section id="forms">
     <h2>HTML Forms</h2>
+    <p class="by">By Hamza Nasar</p>
     <form>
       <input type="text" placeholder="Enter your name">
       <input type="email" placeholder="Enter your email">
@@ -202,6 +232,7 @@
   <!-- Practice -->
   <section id="practice">
     <h2>Practice Examples</h2>
+    <p class="by">By Hamza Nasar</p>
     <div class="example">
       <div class="code">&lt;h1&gt;Hello World&lt;/h1&gt;</div>
       <div class="result"><h1>Hello World</h1></div>
@@ -221,6 +252,7 @@
   <!-- MDN Docs -->
   <section id="docs">
     <h2>Mini MDN Reference</h2>
+    <p class="by">By Hamza Nasar</p>
     <div class="example">
       <div class="code">&lt;form&gt; with various inputs</div>
       <div class="result">
